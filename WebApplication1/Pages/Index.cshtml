@@ -1,0 +1,24 @@
+﻿@page
+@using System.Globalization
+@model IndexModel
+@{
+  ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+  <h1 class="display-4">Welcome</h1>
+
+  <p>
+    Current culture: @CultureInfo.CurrentCulture
+  </p>
+
+    @foreach (var device in Model.Devices)
+    {
+      <div>
+        @Html.DisplayNameFor(model => device.DeviceStateDisplay)
+        :
+        @Html.DisplayFor(model => device.DeviceStateDisplay)
+      </div>
+    }
+  
+</div>
